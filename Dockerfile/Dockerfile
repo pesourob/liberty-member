@@ -12,7 +12,7 @@ WORKDIR /opt/ibm/wlp/bin
 COPY entrypoint.sh /tmp
 
 # Install vim and create the server
-RUN apt-get update && apt install -y vim && apt install iputils-ping && \
+RUN apt-get update && apt install -y vim && apt install iputils-ping && -y \
     mkdir -p /.ssh && \
     touch /.ssh/authorized_keys && \
     chmod -R o+rwx /.ssh/authorized_keys && \
