@@ -6,12 +6,11 @@
 # Join to collective command // !!!HOSTNAME in this case must be use controller hostname !!! Try create configmap or secret
 #./collective join member1 --host=websphere-liberty-controller-0 --port=9443 --keystorePassword=password123 --user=admin --password=admin123 
 
-#./collective testConnection hostName,usrDirPath,serverName  --host=controllerHost \
-#--port=controllerHTTPSPort --user=controllerAdmin \
-#--password=controllerAdminPassword--autoAcceptCertificates
+./collective join member1 --host=websphere-liberty-controller-0.websphere-liberty-controller.pesourob-was-liberty.svc.cluster.local --port=9443 --keystorePassword=password123 --user=admin --password=password123
+
 
 # Start the server
-#/opt/ibm/wlp/bin/server start member1
+/opt/ibm/wlp/bin/server start member1
 
 # Container run 
 #tail -f /logs/messages.log
