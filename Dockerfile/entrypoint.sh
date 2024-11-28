@@ -13,4 +13,4 @@
 /opt/ibm/wlp/bin/server start member1
 
 # Container run 
-#tail -f /logs/messages.log
+tail -f /logs/messages.log
