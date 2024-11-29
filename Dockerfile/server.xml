@@ -9,6 +9,8 @@
       <feature>localConnector-1.0</feature>
     </featureManager>
 
+    <include location="${server.config.dir}/collective-join-include.xml" />
+
     <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
     <httpEndpoint id="defaultHttpEndpoint"
                   host="*"
