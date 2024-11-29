@@ -22,9 +22,6 @@ RUN apt-get update && apt-get install -y vim && \
 
 COPY --chown=1001:0 server.xml /opt/ibm/wlp/usr/servers/member1/
 
-# Switch to non-root user
-USER 1001
-
 # Expose necessary ports
 EXPOSE 9080 9443
 
