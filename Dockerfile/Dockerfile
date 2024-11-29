@@ -32,4 +32,4 @@ EXPOSE 9080 9443
 #ENTRYPOINT ["/tmp/entrypoint.sh"]
 
 # Start the server
-CMD ["/opt/ibm/wlp/bin/server", "start", "member1"]
+CMD /opt/ibm/wlp/bin/server start controller && tail -f /logs/messages.log 
