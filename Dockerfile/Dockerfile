@@ -39,7 +39,7 @@ RUN apt-get update && apt install -y vim && apt install iputils-ping -y &&  \
 COPY --chown=1001:0 server.xml /opt/ibm/wlp/usr/servers/member1/
 
 # Start the server
-CMD /opt/ibm/wlp/bin/server create member1
+CMD /opt/ibm/wlp/bin/server start member1 && tail -f /logs/message.log
 
 # Start the server
 ENTRYPOINT ["/tmp/entrypoint.sh"]
