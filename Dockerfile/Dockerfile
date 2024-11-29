@@ -29,7 +29,7 @@ USER 1001
 EXPOSE 9080 9443
 
 # Set entrypoint
-ENTRYPOINT ["/tmp/entrypoint.sh"]
+#ENTRYPOINT ["/tmp/entrypoint.sh"]
 
 # Start the server
 CMD ["/opt/ibm/wlp/bin/server", "start", "member1"]
