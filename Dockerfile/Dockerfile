@@ -41,7 +41,7 @@ COPY --chown=1001:0 server.xml /opt/ibm/wlp/usr/servers/member1/
 ENTRYPOINT ["/tmp/entrypoint.sh"]
 
 # Start the server
-CMD /opt/ibm/wlp/bin/server start member1 && tail -f /logs/message.log
+CMD /opt/ibm/wlp/bin/server start member1 && tail -f /logs/messages.log
 
 # Expose necessary ports
 EXPOSE 9080 9443
