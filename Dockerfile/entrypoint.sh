@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/opt/ibm/wlp/bin/server start member1
+#/opt/ibm/wlp/bin/server start member1
 
 # Spustit kolektivní příkaz
 #echo "joining to collective"
