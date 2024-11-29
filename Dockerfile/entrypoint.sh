@@ -4,4 +4,4 @@
 
 # Spustit kolektivní příkaz
 echo "joining to collective"
-/opt/ibm/wlp/bin/collective create controller --keystorePassword=password123 --createConfigFile=/opt/ibm/wlp/usr/servers/controller/ --hostName=websphere-liberty-controller
+/opt/ibm/wlp/bin/collective join member1 --host=websphere-liberty-controller --port=9443 --keystorePassword=password123 --user=admin --password=admin123 --autoAcceptCertificates
