@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Work arround for hostname correction
-#sed -i "s/<variable name=\"defaultHostName\" value=\"[^\"]*\" \/>/<variable name=\"defaultHostName\" value=\"$HOSTNAME\" \/>/" /opt/ibm/wlp/usr/servers/controller/collective-create-include.xml
+#/opt/ibm/wlp/bin/server start controller && tail -f /logs/messages.log 
+/opt/ibm/wlp/bin/server start controller && tail -f /logs/messages.log  
 
-# Join to collective command // !!!HOSTNAME in this case must be use controller hostname !!! Try create configmap or secret
-./collective join member1 --host=websphere-liberty-controller --port=9443 --keystorePassword=password123 --user=admin --password=password123 --autoAcceptCertificates
+# Spustit kolektivní příkaz
+
+/opt/ibm/wlp/bin/collective create controller --keystorePassword=password123 --createConfigFile=/opt/ibm/wlp/usr/servers/controller/ --hostName=websphere-liberty-controller
+
+/opt/ibm/wlp/bin/server stop controller && tail -f /logs/messages.log  
