@@ -8,4 +8,4 @@ else
 fi
 
 echo "------------Starting server------------"
-#/opt/ibm/wlp/bin/server start member1 && tail -f /logs/messages.log
+/opt/ibm/wlp/bin/server start member1 && tail -f /logs/messages.log
