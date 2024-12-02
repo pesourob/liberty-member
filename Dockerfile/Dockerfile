@@ -12,7 +12,7 @@ WORKDIR /opt/ibm/wlp/bin
 COPY entrypoint.sh /tmp
 
 # Install dependencies and configure server
-RUN apt-get update && apt-get install -y vim && apt-get install -y openssh-server &&  apt-get install -y iputils-ping telnet && \ 
+RUN apt-get update && apt-get install -y vim && apt-get install -y && apt-get download -y openssh-server openssh-client && apt-get install -y iputils-ping telnet net tools && \ 
     mkdir -p /.ssh && touch /.ssh/authorized_keys && mkdir -p /var/run/sshd && mkdir -p /root/.ssh && chmod 700 /root/.ssh && \
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     chmod 700 /.ssh && chmod 600 /.ssh/authorized_keys && \
