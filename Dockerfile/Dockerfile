@@ -13,7 +13,7 @@ COPY entrypoint.sh /tmp
 
 # Install dependencies and configure server
 RUN apt-get update && apt-get install -y vim && apt-get install -y openssh-server && \
-    mkdir -p /.ssh && touch /.ssh/authorized_keys && mkdir -p /var/run/sshd \
+    mkdir -p /.ssh && touch /.ssh/authorized_keys && mkdir -p /var/run/sshd && \
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     chmod 700 /.ssh && chmod 600 /.ssh/authorized_keys && \
     ./server create member1 && \
