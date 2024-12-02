@@ -13,7 +13,7 @@ COPY entrypoint.sh /tmp
 
 # Install dependencies and configure server
 RUN apt-get update && apt-get install -y vim && apt-get install -y openssh-server &&  apt-get install -y iputils-ping telnet && \
-    mkdir -p /root/.ssh && touch /.ssh/authorized_keys && mkdir -p /var/run/sshd && chmod 700 /home/sshuser/.ssh && \
+    mkdir -p /.ssh && touch /.ssh/authorized_keys && mkdir -p /var/run/sshd && mkdir -p /root/.ssh && chmod 700 /home/sshuser/.ssh && \
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     chmod 700 /.ssh && chmod 600 /.ssh/authorized_keys && \
     ./server create member1 && \
