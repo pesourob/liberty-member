@@ -31,4 +31,4 @@ ENTRYPOINT ["/tmp/entrypoint.sh"]
 #CMD /opt/ibm/wlp/bin/server start member1 && tail -f /logs/messages.log 
 
 # Expose necessary ports
-EXPOSE 9080 9443 22
+EXPOSE 9080 9443 22 2222
