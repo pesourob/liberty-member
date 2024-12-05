@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  labels:
+    app: websphere-liberty-member
+    app.kubernetes.io/component: websphere-liberty-member
+    app.kubernetes.io/instance: websphere-liberty-member
+  name: websphere-liberty-member
+  namespace: pesourob-liberty
+spec:
+  serviceName: "websphere-liberty-member"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: websphere-liberty-member
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftNewApp
+      labels:
+        app: websphere-liberty-member
+    spec:
+      containers:
+        - image: quay.io/pesourob/liberty-member:latest
+          imagePullPolicy: Always
+          name: websphere-liberty-member
+          ports:
+            - containerPort: 9080
+              protocol: TCP
+            - containerPort: 9443
+              protocol: TCP
+            - containerPort: 22
+              protocol: TCP
+          resources: {}
