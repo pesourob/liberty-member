@@ -19,9 +19,12 @@ RUN apt-get update && apt-get install -y vim && apt-get install -y openssh-serve
     ./server create member1 && \
     chmod +x /tmp/entrypoint.sh && \
     chown -R 1001:0 /tmp/entrypoint.sh /opt/ibm/wlp/usr /logs /opt/ibm/wlp/output /etc/wlp && \
-    chmod -R g+rw /opt/ibm/wlp/usr /logs /opt/ibm/wlp/output /etc/wlp
+    chmod -R g+rw /opt/ibm/wlp/usr /logs /opt/ibm/wlp/output /etc/wlp && usermod --shell /bin/bash default && usermod -aG sudo default
+
 
 COPY --chown=1001:0 server.xml /opt/ibm/wlp/usr/servers/member1/
+
+USER default
 
 # Set entrypoint
 ENTRYPOINT ["/tmp/entrypoint.sh"]
